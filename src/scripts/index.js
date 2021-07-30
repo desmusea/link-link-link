@@ -2,11 +2,22 @@ const textElement = document.getElementById('text')
 const imgElement = document.getElementById('image')
 const descriptionElement = document.getElementById('description')
 const optionButtonsElement = document.getElementById('option-buttons')
+const textTab = document.getElementById("text-tab")
+const imageTab = document.getElementById("image-tab")
+const descriptionTab = document.getElementById("description-tab")
+const textLink = document.getElementById("text-link")
+const imageLink = document.getElementById("image-link")
+const descriptionLink = document.getElementById("description-link")
 
 let count = 20
-let state = {english: false, spanish: true, option: 0}
-const descriptionEs = `teresita🍒fútbol🍒club somos Desmusea, Jorge Núñez y Klari Moreno. Con motivo de la Museum Online Game Jam organizada en el marco de A MAZE. / Berlin 2021 - 10th International Games and Playful Media Festival desarrollamos link link link`
-const descriptionEn = `We teresita🍒fútbol🍒club are Desmusea, Jorge Núñez and Klari Moreno. On the occasion of the Museum Online Game Jam, organized in the frame of A MAZE / Berlin 2021 - 10th International Games and Playful Media Festival, we developed "link link link"`
+let state = {
+  english: false,
+  spanish: true,
+  option: 0
+}
+
+const descriptionEs = `<div>teresita🍒fútbol🍒club somos <a class="btn" href="https://desmusea.com/" target="_blank" rel="noopener noreferrer">Desmusea</a>,  <a class="btn" href="https://jorgenunezdelavisitacion.com/" target="_blank" rel="noopener noreferrer">Jorge Nuñez</a> y <a class="btn" href="https://claramorenocela.com/" target="_blank" rel="noopener noreferrer">Klari Moreno</a>. Con motivo de la Museum Online Game Jam organizada en el marco de A MAZE. / Berlin 2021 - 10th International Games and Playful Media Festival desarrollamos link link link</div>`
+const descriptionEn = `<div>We teresita🍒fútbol🍒club are <a class="btn" href="https://desmusea.com/" target="_blank" rel="noopener noreferrer">Desmusea</a>,  <a class="btn" href="https://jorgenunezdelavisitacion.com/" target="_blank" rel="noopener noreferrer">Jorge Nuñez</a> and <a class="btn" href="https://claramorenocela.com/" target="_blank" rel="noopener noreferrer">Klari Moreno</a>. On the occasion of the Museum Online Game Jam, organized in the frame of A MAZE / Berlin 2021 - 10th International Games and Playful Media Festival, we developed link link link</div>`
 const textNodes = [
   {
     id: 0,
@@ -242,12 +253,19 @@ function selectLang (lang) {
     spanish: lang !== 'en',
   }
   selectOption(state.option)
-  descriptionElement.innerText = lang === 'en' ? descriptionEn : descriptionEs
+  descriptionElement.innerHTML = lang === 'en' ? descriptionEn : descriptionEs
 }
+
 
 function startGame() {
   showTextNode(state.option)
-  descriptionElement.innerText = state.english ? descriptionEn : descriptionEs
+  descriptionElement.innerHTML = state.english ? descriptionEn : descriptionEs
+}
+
+
+function startGame() {
+  showTextNode(state.option)
+  descriptionElement.innerHTML = state.english ? descriptionEn : descriptionEs
 }
 
 function showTextNode(id) {
@@ -276,6 +294,44 @@ const setCounter = () => {
   }, 1000);
 }
 
+const openTab = (tab) => {
+  switch (tab) {
+    case 'descriptionTab':
+      descriptionTab.classList = ''
+      descriptionLink.classList = 'link-opened'
+      break;
+    case 'imageTab':
+      imageTab.classList = ''
+      imageLink.classList = 'link-opened'
+      break;
+    case 'textTab':
+      textTab.classList = ''
+      textLink.classList = 'link-opened'
+      break;
+    default:
+      break;
+  }
+}
+
+const closeTab = (tab) => {
+  switch (tab) {
+    case 'descriptionTab':
+      descriptionTab.classList = 'closed'
+      descriptionLink.classList = 'link-closed'
+      break;
+    case 'imageTab':
+      imageTab.classList = 'closed'
+      imageLink.classList = 'link-closed'
+      break;
+    case 'textTab':
+      textTab.classList = 'closed'
+      textLink.classList = 'link-closed'
+      break;
+    default:
+      break;
+  }
+}
+
 function selectOption(option) {
   state = {...state, option}
   showTextNode(option)
@@ -284,11 +340,9 @@ function selectOption(option) {
   }
 }
 
-
-dragElement(document.getElementById("text-tab"));
-dragElement(document.getElementById("image-tab"));
-dragElement(document.getElementById("description-tab"));
-
+dragElement(textTab);
+dragElement(imageTab);
+dragElement(imageTab);
 
 function dragElement(element) {
   let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;

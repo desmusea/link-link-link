@@ -4,42 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teresita🍒fútbol🍒club</title>
+    <title>link link link</title>
     <link rel="stylesheet" href="./src/styles/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="lang-wrapper">
-            <button class="lang" onclick="selectLang('en')">𝓮𝓷glish</button>
-            <button class="lang" onclick="selectLang('es')">𝓮𝓼pañol</button>
-        </div>
-        <div id="text-tab">
-            <div id="tab-header">x
-        </div>
-            <div id="text-container" class="text-container">
-                <div id="text" class="text"></div>
-                <div id="option-buttons" class="btn-grid"></div>
-            </div>
-        </div>
-        <div id="image-tab">
-            <div id="tab-header">
-                x
-            </div>
-            <div id="img-container" class="img-container">
-                <img id="image" class="image" src="./src/images/tfc.png" alt="venus-adonis">
-            </div>
-        </div>
-        <div id="description-tab">
-            <div id="tab-header">
-                x
-            </div>
-            <div id="description" class="text-container">
-                We teresita🍒fútbol🍒club are Desmusea, Jorge Núñez and Klari Moreno. On the occasion of the Museum Online Game Jam, organized in the frame of A MAZE / Berlin 2021 - 10th International Games and Playful Media Festival, we developed "link link link"
-            </div>
-        </div>
-        <p class="texto">LINK LINK LINK</p>
-        <p class="subtitle">ⓣ𝓔尺έรĮţａ ｆย𝓉𝐁𝐨ᒪ ᶜ𝓛Ｕβ</p>
+  <div class="container">
+    <div class="lang-wrapper">
+      <button class="lang" onclick="selectLang('en')">𝓮𝓷glish</button>
+      <button class="lang" onclick="selectLang('es')">𝓮𝓼pañol</button>
     </div>
+    <div id="text-tab">
+      <div id="tab-header">
+        <span onclick="closeTab('textTab')" class="close">x</span>
+      </div>
+      <div id="text-container" class="text-container">
+        <div id="text" class="text"></div>
+        <div id="option-buttons" class="btn-grid"></div>
+      </div>
+    </div>
+      <div id="image-tab">
+        <div id="tab-header">
+          <span onclick="closeTab('imageTab')" class="close">
+            x
+          </span>
+        </div>
+        <div id="img-container" class="img-container">
+          <img id="image" class="image" src="./src/images/tfc.png" alt="venus-adonis">
+        </div>
+      </div>
+      <div id="description-tab">
+        <div id="tab-header">
+          <span onclick="closeTab('descriptionTab')" class="close">x</span>
+        </div>
+        <div id="description" class="text-container">
+          We teresita🍒fútbol🍒club are Desmusea, Jorge Núñez and Klari Moreno. On the occasion of the Museum Online Game Jam, organized in the frame of A MAZE / Berlin 2021 - 10th International Games and Playful Media Festival, we developed "link link link"
+        </div>
+      </div>
+      <p class="texto">
+        <button id="text-link" onclick="openTab('textTab')" class="link-opened">
+          LINK
+        </button>
+        <button id="image-link" onclick="openTab('imageTab')" class="link-opened">
+          LINK
+        </button>
+        <button id="description-link" onclick="openTab('descriptionTab')" class="link-opened">
+          LINK
+        </button>
+      </p>
+      <p class="subtitle">ⓣ𝓔尺έรĮţａ ｆย𝓉𝐁𝐨ᒪ ᶜ𝓛Ｕβ</p>
+  </div>
 <script type="text/javascript" src="./src/scripts/index.js"></script>
 </body>
 </html>
