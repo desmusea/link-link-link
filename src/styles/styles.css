@@ -42,6 +42,17 @@ body {
   left: 750px;
 }
 
+.text-container {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 10px 10px 10px;
+  border: 2px solid black;
+  max-width: 500px;
+  padding: 10px;
+}
+
 #description-tab {
   position: absolute;
   z-index: 1;
@@ -73,17 +84,6 @@ body {
   border-radius: 0 10px 10px 10px;
   border: 2px solid black;
   max-width: 500px;
-}
-
-.text-container {
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0 10px 10px 10px;
-  border: 2px solid black;
-  max-width: 500px;
-  padding: 10px;
 }
 
 .image {
@@ -162,10 +162,45 @@ body {
 }
 
 .lang:hover,
-.link-closed:hover,
+.link-closed:hover
 .btn:hover {
   cursor: url('./../images/cursor-svg.svg'), auto;
   font-style: italic;
 }
 
 
+@media (max-width: 700px) {
+  body {
+    font-size: 15px;
+  }
+
+  #description-tab {
+    bottom: 15px;
+    right: 10px;
+  }
+
+  #text-tab {
+    top: 55px;
+    left: 10px;
+    right: 5px;
+  }
+
+  #image-tab {
+    top: 200px;
+    left: 20px;
+  }
+
+  .image {
+    max-width: 150px;
+  } 
+
+  .img-container {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .img-container {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
