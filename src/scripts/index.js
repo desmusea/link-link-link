@@ -338,9 +338,10 @@ function selectOption(option) {
 
 dragElement(textTab);
 dragElement(imageTab);
-dragElement(imageTab);
+dragElement(descriptionTab);
 
 function dragElement(element) {
+  console.log(element)
   let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   element.onmousedown = dragMouseDown;
 
