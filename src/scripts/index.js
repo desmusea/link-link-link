@@ -7,7 +7,7 @@ const descriptionTab = document.getElementById("description-tab")
 const textLink = document.getElementById("text-link")
 const imageLink = document.getElementById("image-link")
 const descriptionLink = document.getElementById("description-link")
-let downloadTimer;
+let sceneTimer;
 
 let count = 20
 let state = {
@@ -252,7 +252,7 @@ function selectLang (lang) {
     english: lang === 'en',
     spanish: lang !== 'en',
   }
-  clearInterval(downloadTimer);
+  clearInterval(sceneTimer);
   selectOption(state.option)
   descriptionElement.innerHTML = lang === 'en' ? descriptionEn : descriptionEs
 }
@@ -280,10 +280,10 @@ function showTextNode(id) {
 const setCounter = () => {
   const counter = document.getElementById("counter")
   let timeleft = 20;
-  downloadTimer = setInterval(function(){
+  sceneTimer = setInterval(function(){
     if (timeleft <= 0) {
       selectOption(7)
-      clearInterval(downloadTimer);
+      clearInterval(sceneTimer);
     }
     if (counter) {
       counter.innerText = timeleft;
