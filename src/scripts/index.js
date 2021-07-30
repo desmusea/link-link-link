@@ -1,7 +1,6 @@
 const textElement = document.getElementById('text')
 const imgElement = document.getElementById('image')
 const descriptionElement = document.getElementById('description')
-const optionButtonsElement = document.getElementById('option-buttons')
 const textTab = document.getElementById("text-tab")
 const imageTab = document.getElementById("image-tab")
 const descriptionTab = document.getElementById("description-tab")
@@ -274,9 +273,6 @@ function showTextNode(id) {
   textElement.innerHTML = textNode.text
   imgElement.src = textNode.image
   imgElement.alt = textNode.alt
-  while (optionButtonsElement.firstChild) {
-    optionButtonsElement.removeChild(optionButtonsElement.firstChild)
-  }
 }
 
 const setCounter = () => {
